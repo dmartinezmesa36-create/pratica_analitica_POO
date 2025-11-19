@@ -1,10 +1,12 @@
 from Figurasgeometricas import Figurasgeometricas
 from Triangulo import Triangulo
-from CIRCULO import Circulo
-from CUADRADO import Cuadrado
-from RECTANGULO import Rectangulo
-from cilindro import Cilindro
+from Circulo import Circulo
+from Cuadrado import Cuadrado
+from Rectangulo import Rectangulo
+from Cilindro import Cilindro
 from Paralelograma import Paralelograma
+from Cubo import Cubo
+from esfera import Esfera
 
 
 
@@ -18,7 +20,9 @@ def menu():
         print("rectangulo (4) ")
         print("cilindro (5) ")
         print("paralelograma (6)")
-        print("Cerrar (0) ")
+        print("cubo (7) ")
+        print("esfera(8)")
+        print("Cerrar (0)")
         print("--------------------------------------")
         opcion = input("digite el numero de la figura que desea hallar el area: ")
         if opcion == "1":
@@ -60,9 +64,16 @@ def menu():
             pr.base = base
             pr.altura = altura
             print("El area del paralelograma es:",opcion, "es",pr.area())
-
-            print("opcion no valida")
-
+        elif opcion =="7":
+            lado = float(input("digite el lado del cubo: "))
+            cu = Cubo("cubo")
+            cu.lado = lado
+            print("El area del cubo es:",opcion, "es",cu.area())
+        elif opcion =="8":
+            radio=float(input("digite el radio de la esfera: "))
+            es= Esfera("esfera")
+            es.radio= radio
+            print("El area de la esfera es:",opcion, "es",es.area())
         else: 
             opcion == "0"
             print("fin del programa")
